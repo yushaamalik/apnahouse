@@ -2,24 +2,31 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Architect;
+use App\Models\PlanCategory;
 use App\Models\ModificationRequest;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Plan extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function architect()
     {
-        # code...
-        return $this->belongsTo('App\Models\Architect');
+        return $this->belongsTo(Architect::class);
     }
 
     public function modificationRequest()
     {
-        # code...
-        return $this->hasMany('App\Models\ModificationRequest');
+        return $this->hasMany(ModificationRequest::class);
+    }
+
+    public function planCategory()
+    {
+        return $this->belongsTo(PlanCategory::class);
     }
 
 }

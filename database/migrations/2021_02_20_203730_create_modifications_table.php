@@ -4,22 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModificationRequestsTable extends Migration
+class CreateModificationsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('modification_requests', function (Blueprint $table) {
+        Schema::create('modifications', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('architect_id');
-            $table->integer('plan_id');
             $table->string('title');
             $table->integer('status')->default(0);
+            
+            $table->foreignId('architect_id')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('plan_id')->nullable();
             $table->timestamps();
         });
     }

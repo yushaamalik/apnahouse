@@ -31,7 +31,7 @@
                     | {{$modificationId}}
                     <ul> --}}
                     @foreach($messages as $message)
-                    @if($message->modification_request_id == $modificationId)
+                    @if($message->modification_id == $modificationId)
                     @if($message->plan_id == $planId)
                     @if($message->sender_id == Auth::guard('web')->user()->id)
                         <li><strong>You </strong> : {{$message->body}} <div class="text-right"><small> Sent at : {{$message->created_at}}</small></div></li>

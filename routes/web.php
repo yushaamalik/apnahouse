@@ -2,28 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-//Pages
 Route::get('/', 'PagesController@index')->name('pages.index');
+
+Route::get('home', 'HomeController@home')->name('home');
+
 Auth::routes();
 
-//Modification Request
-Route::get('modification-request/{id}/{architectId}/{modificationId}', 'ModificationRequestsController@index')->name('modification.index');
-Route::post('modification-request-save/{planId}/{architectId}', 'ModificationRequestsController@store')->name('modification.store');
+// MODIFICATION REQUEST
 
-//Messages
-Route::post('message-send', 'MessagesController@sendMessage')->name('message.user.send');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::name('modification.')->prefix('modification')->group(function () {
+    Route::get('view/{id}/{architectId}/{modificationId}', 'ModificationsController@view')->name('view');
+    Route::post('save/{planId}/{architectId}', 'ModificationsController@store')->name('store');
+});
+
+// MESSAGES
+
+Route::name('message.')->prefix('message')->group(function () {
+    Route::post('send', 'MessagesController@send')->name('user.send');
+});

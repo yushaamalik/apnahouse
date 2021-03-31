@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Plan;
 
-class ModificationRequest extends Model
+class Modification extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,6 @@ class ModificationRequest extends Model
 
     public function plan()
     {
-        # code...
         return $this->belongsTo('App\Models\Plan');
     }
 }
