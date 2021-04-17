@@ -12,8 +12,6 @@ class Architect extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
-     * @var array
      */
     protected $fillable = [
         'name', 'email', 'password',
@@ -21,8 +19,6 @@ class Architect extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
-     * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
@@ -30,8 +26,6 @@ class Architect extends Authenticatable
 
     /**
      * The attributes that should be cast to native types.
-     *
-     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
@@ -39,13 +33,11 @@ class Architect extends Authenticatable
 
     public function architectProfile()
     {
-        # code...
-        return $this->hasMany('App\Models\ArchitectProfile');
+        return $this->hasMany(ArchitectProfile::class);
     }
 
     public function plan()
     {
-        # code...
-        return $this->hasMany('App\Models\Plan');
+        return $this->hasMany(Plan::class);
     }
 }

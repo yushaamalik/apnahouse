@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('home', 'HomeController@home')->name('dashboard');
+Route::get('home', 'AdminController@dashboard')->name('dashboard');
 
 // PROFILES
 

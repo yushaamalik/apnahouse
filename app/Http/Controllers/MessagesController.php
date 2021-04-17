@@ -10,7 +10,6 @@ use App\Models\Message;
 
 class MessagesController extends Controller
 {
-    //
     public function send(Request $request)
     {
         $message = new Message;

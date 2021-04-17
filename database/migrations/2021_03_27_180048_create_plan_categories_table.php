@@ -12,6 +12,8 @@ class CreatePlanCategoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->string('summary');
+            $table->string('thumb')->nullable();
             $table->timestamps();
         });
     }

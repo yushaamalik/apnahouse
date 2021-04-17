@@ -9,17 +9,13 @@ use App\Models\ArchitectProfile;
 use App\Models\Plan;
 use Auth;
 
-
 class PlansController extends Controller
 {
-    //
     public function allPlans()
     {
-        # code...
         $allPlans = Plan::orderBy('id', 'desc')->get();
 
-        return view('admin.plan.allPlans', 
-        [
+        return view('admin.plan.allPlans', [
             'allPlans'  => $allPlans,
         ]);
     }

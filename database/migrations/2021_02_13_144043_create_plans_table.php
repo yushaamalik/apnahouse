@@ -28,15 +28,16 @@ class CreatePlansTable extends Migration
             $table->string('laundary_rooms')->nullable();
             $table->string('terraces')->nullable();
             $table->string('rooftops')->nullable();
-            $table->string('plan_summary')->nullable();
             $table->string('price')->nullable();
-            $table->string('plan_description')->nullable();
-            $table->string('plan_files')->nullable();
             $table->string('plan_name')->nullable();
+            $table->string('plan_summary')->nullable();
+            $table->string('plan_description')->nullable();
             $table->string('plan_set_information')->nullable();
             $table->integer('corner_plot')->nullable();
             $table->integer('plan_status')->default(1);
+            $table->string('plan_files')->nullable();
             
+            $table->integer('plan_category_id');
             $table->integer('architect_id');
             $table->timestamps();
         });

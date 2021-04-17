@@ -52,6 +52,11 @@
                 </a>
               </li>
               <li class="dropdown">
+                <a href="/plans">
+                  <span class="">See Plans</span>
+                </a>
+              </li>
+              <li class="dropdown">
                 <a href="#">
                   <span class="">Services</span>
                 </a>
@@ -73,12 +78,9 @@
     </div>
     <!--end of container-->
   </nav>
-  <!--end bar-->
-  </div>
 
   @yield('content')
   @yield('table')
-
 
   <footer class="text-center-xs space--xs bg--dark ">
     <div class="container">

@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="/admin/assets/css/jasny-bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/admin/assets/css/select2.min.css" />
   <link rel="stylesheet" type="text/css" href="/admin/assets/css/bootstrap-select.min.css" />
-  
+
   <!-- dataTables -->
   <link href="/admin/assets/css/buttons.dataTables.min.css" rel="stylesheet">
   <link href="/admin/assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -49,8 +49,8 @@
 
   <!-- AdminUI demo css-->
   <link href="/admin/assets/css/adminUIdemo.css" rel="stylesheet">
-  <link href='assets/css/fullcalendar.css' rel='stylesheet' />
-  <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <link href='/admin/assets/css/fullcalendar.css' rel='stylesheet' />
+  <link href='/admin/assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -78,16 +78,13 @@
         <div class="hor-menu  hor-menu-light hidden-sm hidden-xs">
           <ul class="nav navbar-nav">
             <!-- DOC: Remove data-hover="megamenu-dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
-            <li class="classic-menu-dropdown active"> <a href="{{ route('home') }}"><i class="icon-user fa-fw"></i></a>
+            <li class="classic-menu-dropdown active"> <a href="{{ route('home') }}"><i
+                  class="icon-user fa-fw"></i></a>
             </li>
-            
           </ul>
-
         </div>
         <!--  TOP NAVIGATION MENU -->
-
         <ul class="nav navbar-nav pull-right">
-
           <!-- START USER LOGIN DROPDOWN -->
           <li class="dropdown dropdown-user">
             <a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle"
@@ -97,7 +94,6 @@
             <ul class="dropdown-menu dropdown-menu-default">
               <li>
                 <a href="{{ route('home') }}"> <i class="icon-user"></i> My Profile </a>
-
               </li>
               <li>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -135,11 +131,11 @@
             <!-- END RESPONSIVE SEARCH FORM -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('pages.index') }}"> <i class="fa fa-th-large"></i> <span
-                class="title">Visit Website</span> </a>
+            <a class="nav-link" href="{{ route('home') }}"> <i class="fa fa-th-large"></i> <span class="title">Visit
+                Website</span> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('home') }}"> <i class="fa fa-th-large"></i> <span
+            <a class="nav-link" href="{{ route('user.dashboard.dashboard') }}"> <i class="fa fa-th-large"></i> <span
                 class="title">Dashboard</span> </a>
           </li>
           <li class="heading">
@@ -169,63 +165,16 @@
               </li>
             </ul>
           </li>
-          {{-- <li class="nav-item">
-                        <a class="nav-link nav-toggle" href="javascript:;"> <i class="fa fa-th-large"></i> <span class="title">Products</span> <span class="arrow"></span> </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"> <span class="title">All Products</span> </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span class="title">Add new Product </span> </a>
-                            </li>
-                        </ul>
-                        <li class="nav-item">
-                            <a class="nav-link nav-toggle" href="javascript:;"> <i class="fa fa-th-large"></i> <span class="title">Categories</span> <span class="arrow"></span> </a>
-                            <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <i class="fa fa-th-large"></i> <span class="title">Add new </span> </a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <i class="fa fa-th-large"></i> <span class="title">All Categories</span> </a>
-                    </li>
-                    </li>
-                    </li>
-                </ul>
-
-             
-               
-
-                
-                    
-                    <li class="nav-item">
-                        <a class="nav-link nav-toggle" href="javascript:;"> <i class="fa fa-th-large"></i> <span class="title">Queries</span> <span class="arrow"></span> </a>
-                        <ul class="sub-menu">
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> <i class="fa fa-th-large"></i> <span class="title">All Queries</span> </a>
-                </li>
-                </li>
-
-                    
-                   
-                    </li>
-                </ul> --}}
       </div>
     </div>
+    
     @yield('content')
-    
-    
+
     <!-- start footer -->
     <div class="footer">
-      <div class="pull-right">
-
-      </div>
+      <div class="pull-right"></div>
       <div> <strong>Copyright</strong> Romerscen &copy; <?php echo date('Y'); ?> </div>
     </div>
-  </div>
-  </div>
-  </div>
   </div>
   <!-- Go top -->
   <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
@@ -235,26 +184,25 @@
   <!-- bootstrap js -->
   <script src="/admin/assets/js/vendor/bootstrap.min.js"></script>
   <!--  morris Charts  -->
-  
 
   <!-- dataTables-->
-  <script type="text/javascript" src="/admin/assets/js/vendor/jquery.dataTables.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/dataTables.bootstrap.min.js"></script>
+  <script src="/admin/assets/js/vendor/jquery.dataTables.js"></script>
+  <script src="/admin/assets/js/vendor/dataTables.bootstrap.min.js"></script>
   <!-- js for print and download -->
-  <script type="text/javascript" src="/admin/assets/js/vendor/dataTables.buttons.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/buttons.flash.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/jszip.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/pdfmake.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/vfs_fonts.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/buttons.html5.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/buttons.print.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/dataTables.responsive.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/js/vendor/dataTables.fixedHeader.min.js"></script>
+  <script src="/admin/assets/js/vendor/dataTables.buttons.min.js"></script>
+  <script src="/admin/assets/js/vendor/buttons.flash.min.js"></script>
+  <script src="/admin/assets/js/vendor/jszip.min.js"></script>
+  <script src="/admin/assets/js/vendor/pdfmake.min.js"></script>
+  <script src="/admin/assets/js/vendor/vfs_fonts.js"></script>
+  <script src="/admin/assets/js/vendor/buttons.html5.min.js"></script>
+  <script src="/admin/assets/js/vendor/buttons.print.min.js"></script>
+  <script src="/admin/assets/js/vendor/dataTables.responsive.min.js"></script>
+  <script src="/admin/assets/js/vendor/dataTables.fixedHeader.min.js"></script>
 
   <script src="/admin/assets/js/vendor/chartJs/Chart.bundle.js"></script>
   <script src="/admin/assets/js/dashboard1.js"></script>
   <!-- slimscroll js -->
-  <script type="text/javascript" src="/admin/assets/js/vendor/jquery.slimscroll.js"></script>
+  <script src="/admin/assets/js/vendor/jquery.slimscroll.js"></script>
   <!-- pace js -->
   <script src="/admin/assets/js/vendor/pace/pace.min.js"></script>
   <!-- Sparkline -->
@@ -268,11 +216,12 @@
 
   <script src="/admin/assets/js/vendor/select2.min.js"></script>
 
-  <script src='assets/js/vendor/lib/moment.min.js'></script>
-  <script src='assets/js/vendor/lib/jquery-ui.custom.min.js'></script>
-  <script src='assets/js/vendor/fullcalendar.min.js'></script>
+  <script src='/admin/assets/js/vendor/lib/moment.min.js'></script>
+  <script src='/admin/assets/js/vendor/lib/jquery-ui.custom.min.js'></script>
+  <script src='/admin/assets/js/vendor/fullcalendar.min.js'></script>
   <!-- pace js -->
 
   @yield('js')
 </body>
+
 </html>

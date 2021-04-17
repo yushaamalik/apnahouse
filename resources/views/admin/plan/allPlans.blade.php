@@ -1,4 +1,5 @@
 @extends('admin.layouts.admin')
+
 @section('content')
 <div class="page-content-wrapper animated fadeInRight">
     <div class="page-content" >

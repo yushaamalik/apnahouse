@@ -61,7 +61,22 @@
         </div>
       </div>
     </section>
-    @include('pages.plans')
+    <section class="">
+      <div class="container">
+        <div class="text-center space--xs">
+          <h2>Browse Plans</h2>
+        </div>
+        <div class="masonry">
+          <div class="masonry__container row">
+            @foreach ($plans as $plan)
+              <div class="col-md-4 masonry__item">
+                @include('pages.planbox')
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       <div class="container">
         <div class="row">
@@ -237,4 +252,5 @@
       </div>
       <!--end of container-->
     </section>
-  @endsection
+  </div>
+@endsection

@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('home', 'AdminController@dashboard')->name('dashboard');
 
-Route::get('/home', 'HomeController@home')->name('dashboard');
 //Profiles
 Route::get('all-profiles', 'ArchitectProfilesController@allProfiles')->name('architect.allProfiles'); 
 Route::get('pending-profiles', 'ArchitectProfilesController@pendingProfiles')->name('architect.pendingProfiles');

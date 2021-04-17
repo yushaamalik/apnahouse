@@ -9,11 +9,12 @@ class PlanCategory extends Model
 {
     use HasFactory;
 
+    protected $table = 'plan_categories';
+
     protected $guarded = [];
 
     public function plans()
     {
         return $this->hasMany(Plan::class);
     }
-    
 }

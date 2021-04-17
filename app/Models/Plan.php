@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Models\Architect;
 use App\Models\PlanCategory;
-use App\Models\ModificationRequest;
+use App\Models\Modification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -19,9 +19,9 @@ class Plan extends Model
         return $this->belongsTo(Architect::class);
     }
 
-    public function modificationRequest()
+    public function modification()
     {
-        return $this->hasMany(ModificationRequest::class);
+        return $this->hasMany(Modification::class);
     }
 
     public function planCategory()
